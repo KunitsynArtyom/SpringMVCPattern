@@ -1,0 +1,41 @@
+<html ng-app="app">
+
+<head>
+    <script src="/resources/lib/angular/angular.js"></script>
+    <script src="/resources/bootstrap/js/bootstrap.js"></script>
+    <script src="/resources/js/controllers/BookController.js"></script>
+    <script src="/resources/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<div ng-controller="BookController as formController"
+     style="width:90%; margin-bottom: 50px; margin-left:auto; margin-right:auto;">
+
+    <div class="alert alert-info" style="width:400px;" ng-show="books.length > 0">
+        We have books!
+    </div>
+
+    <!--<button type="button" class="btn btn-default" ng-click="fetchBookList()" style="margin-bottom: 10px"-->
+            <!--title="Refresh">-->
+        <!--<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>-->
+    <!--</button>-->
+
+    <table class="table table-bordered" ng-show="books.length > 0">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="book in books">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
