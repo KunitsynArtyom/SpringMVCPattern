@@ -21,4 +21,16 @@ public class BookServiceImpl implements BookService {
         return bookDao.findAll();
     }
 
+    public Book findById(int id) {
+        return bookDao.findById(id);
+    }
+
+    public void insert(Book book) {
+        bookDao.insert(book);
+    }
+
+    public void update(Book book) {
+        bookDao.update(book);
+    }
+
 }

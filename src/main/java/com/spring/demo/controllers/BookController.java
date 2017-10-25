@@ -6,7 +6,9 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -31,6 +33,11 @@ public class BookController {
         List<Book> bookList = bookService.findAll();
         logger.debug("Response: " + bookList);
         return bookList;
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public @ResponseBody void updateBook(@RequestBody Book book) {
+        bookService.update(book);
     }
 
     @RequestMapping("/layout")

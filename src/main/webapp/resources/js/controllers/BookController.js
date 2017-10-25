@@ -1,6 +1,5 @@
-var modul = angular.module("Books", []);
-
-modul.controller("BookController", ['$scope', '$http', function ($scope, $http) {
+angular.module("Books", [])
+    .controller("BookController", ['$scope', '$http', function ($scope, $http) {
     var _this = this;
 
     $scope.fetchBookList = function () {
@@ -12,9 +11,3 @@ modul.controller("BookController", ['$scope', '$http', function ($scope, $http) 
     $scope.fetchBookList();
 
 }]);
-
-modul.directive("bookList", function () {
-    return {
-        templateUrl: "books/layout.html"
-    }
-});

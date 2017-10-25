@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface BookService {
     List<Book> findAll();
-    //Book findById(int id);
-    //void insert(Book book);
+    Book findById(int id);
+    void insert(Book book);
+    void update(Book book);
 }
